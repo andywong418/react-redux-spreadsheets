@@ -1,1 +1,3 @@
 /* Action types */
+export const UPDATE_CELLS = 'UPDATE_CELLS';
+export const UPDATE_CURRENT_SELECTED = 'UPDATE_CURRENT_SELECTED';

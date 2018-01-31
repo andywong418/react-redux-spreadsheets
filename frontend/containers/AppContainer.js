@@ -7,16 +7,17 @@ import { Route } from 'react-router-dom';
 import AnotherPage from '../components/AnotherPage';
 import {ConnectedRouter} from 'react-router-redux';
 import {withRouter} from 'react-router';
+import Table from '../components/Table';
+
 const HomeWrapper = ({name}) => {
   return (
     <Home name={name} />
   )
 }
-const App = ({ name }) => {
+const App = ({ name, data, updateCell }) => {
     return (
         <div>
-            <Route exact path="/" component={HomeWrapper}/>
-            <Route path="/anotherPage" component={AnotherPage}/>
+            <Table/>
         </div>
     );
 };
@@ -36,7 +37,7 @@ AppContainer.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        name: state.name
+        name: state.rootReducer.name
     };
 };
 
